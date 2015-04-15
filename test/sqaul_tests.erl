@@ -8,5 +8,5 @@
 
 test_test_() ->
 	[
-		{"Simple select", ?testGenSql(<<"select * from table">>, insert, [table])}
+		{"Simple select", ?testGenSql(<<"select * from table">>, select, [table])}
 	].

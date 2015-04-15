@@ -1,18 +1,19 @@
 -module(sqaul).
 
-%% sqaul: sqaul library's entry point.
+%% ------------------------------------------------------------------
+%% API Function Exports
+%% ------------------------------------------------------------------
 
--export([my_func/0]).
+-export([select/1]).
 
 
-%% API
+%% ------------------------------------------------------------------
+%% API Function Definitions
+%% ------------------------------------------------------------------
 
-my_func() ->
-    ok().
+select(Table) when is_atom(Table) -> select(atom_to_list(Table));
+select(Table) when is_list(Table) -> <<"select * from ", (iolist_to_binary(Table))/binary>>.
 
-%% Internals
-
-ok() ->
-    ok.
-
-%% End of Module.
+%% ------------------------------------------------------------------
+%% Internal Function Definitions
+%% ------------------------------------------------------------------
