@@ -1,0 +1,14 @@
+{application, sqaul,
+ [
+  {description, "An Erlang sqaul library"},
+  {vsn, "1"},
+  {modules, [
+             sqaul
+            ]},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {env, []}
+ ]}.
